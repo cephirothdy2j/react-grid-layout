@@ -355,6 +355,7 @@ class ReactGridLayout extends React.Component {
         isDraggable={false}
         isResizable={false}
         useCSSTransforms={this.props.useCSSTransforms}
+        style={styles.placeholder}
         >
         <div />
       </GridItem>

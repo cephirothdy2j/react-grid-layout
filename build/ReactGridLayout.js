@@ -276,7 +276,8 @@ var ReactGridLayout = (function (_React$Component) {
           rowHeight: this.props.rowHeight,
           isDraggable: false,
           isResizable: false,
-          useCSSTransforms: this.props.useCSSTransforms
+          useCSSTransforms: this.props.useCSSTransforms,
+          style: styles.placeholder
         },
         _react2['default'].createElement('div', null)
       );
