@@ -229,7 +229,7 @@ class ReactGridLayout extends React.Component {
 
     // Create placeholder (display only)
     var placeholder = {
-      w: l.w, h: l.h, x: l.x, y: l.y, placeholder: true, i: i, style: styles.placeholder
+      w: l.w, h: l.h, x: l.x, y: l.y, placeholder: true, i: i, style: styles.reactGridPlaceholder
     };
 
     // Move the element to the dragged location.
@@ -295,7 +295,7 @@ class ReactGridLayout extends React.Component {
 
     // Create placeholder element (display only)
     var placeholder = {
-      w: w, h: h, x: l.x, y: l.y, placeholder: true, i: i, style: styles.placeholder
+      w: w, h: h, x: l.x, y: l.y, placeholder: true, i: i, style: styles.reactGridPlaceholder
     };
 
     this.props.onResize(layout, oldL, l, placeholder, e, element);
@@ -342,7 +342,7 @@ class ReactGridLayout extends React.Component {
         isDraggable={false}
         isResizable={false}
         useCSSTransforms={this.props.useCSSTransforms}
-        style={styles.placeholder}
+        style={styles.reactGridPlaceholder}
         >
         <div />
       </GridItem>
