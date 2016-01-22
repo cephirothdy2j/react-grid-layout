@@ -402,8 +402,10 @@ class ReactGridLayout extends React.Component {
     var {className, ...props} = this.props;
     className = 'react-grid-layout ' + (className || '');
 
+    var gridStyles = styles.reactGridLayout;
+    gridStyles.height = this.containerHeight();
     return (
-      <div {...props} className={className} style={{height: this.containerHeight()}}>
+      <div {...props} className={className} style={gridStyles}>
         {React.Children.map(this.props.children, this.processGridItem.bind(this))}
         {this.placeholder()}
       </div>

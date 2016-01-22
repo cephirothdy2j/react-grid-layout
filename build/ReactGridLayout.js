@@ -91,7 +91,7 @@ var ReactGridLayout = (function (_React$Component) {
 
       // Create placeholder (display only)
       var placeholder = {
-        w: l.w, h: l.h, x: l.x, y: l.y, placeholder: true, i: i, style: _styles2['default'].placeholder
+        w: l.w, h: l.h, x: l.x, y: l.y, placeholder: true, i: i, style: _styles2['default'].reactGridPlaceholder
       };
 
       // Move the element to the dragged location.
@@ -155,7 +155,7 @@ var ReactGridLayout = (function (_React$Component) {
 
       // Create placeholder element (display only)
       var placeholder = {
-        w: w, h: h, x: l.x, y: l.y, placeholder: true, i: i, style: _styles2['default'].placeholder
+        w: w, h: h, x: l.x, y: l.y, placeholder: true, i: i, style: _styles2['default'].reactGridPlaceholder
       };
 
       _this.props.onResize(layout, oldL, l, placeholder, e, element);
@@ -266,7 +266,7 @@ var ReactGridLayout = (function (_React$Component) {
           isDraggable: false,
           isResizable: false,
           useCSSTransforms: this.props.useCSSTransforms,
-          style: _styles2['default'].placeholder
+          style: _styles2['default'].reactGridPlaceholder
         },
         _react2['default'].createElement('div', null)
       );
@@ -331,9 +331,11 @@ var ReactGridLayout = (function (_React$Component) {
 
       className = 'react-grid-layout ' + (className || '');
 
+      var gridStyles = _styles2['default'].reactGridLayout;
+      gridStyles.height = this.containerHeight();
       return _react2['default'].createElement(
         'div',
-        _extends({}, props, { className: className, style: { height: this.containerHeight() } }),
+        _extends({}, props, { className: className, style: gridStyles }),
         _react2['default'].Children.map(this.props.children, this.processGridItem.bind(this)),
         this.placeholder()
       );

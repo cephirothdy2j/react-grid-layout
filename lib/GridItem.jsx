@@ -247,6 +247,7 @@ export default class GridItem extends Component {
    * @return {Function}           Handler function.
    */
   onDragHandler: Function = (handlerName: string) => {
+    console.log('drag handler', this);
     return (e: Event, {element, position}: {element: Node, position: Position}) => {
       if (!this.props[handlerName]) return;
       // Get new XY
@@ -268,6 +269,8 @@ export default class GridItem extends Component {
    * @return {Function}           Handler function.
    */
   onResizeHandler: Function = (handlerName: string) => {
+    console.log('resize handler', this);
+
     return (e: Event, {element, size}: {element: Node, size: Position}) => {
       if (!this.props[handlerName]) return;
 

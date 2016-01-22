@@ -52,6 +52,7 @@ var GridItem = (function (_Component) {
     };
 
     this.onDragHandler = function (handlerName) {
+      console.log('drag handler', _this);
       return function (e, _ref) {
         var element = _ref.element;
         var position = _ref.position;
@@ -73,6 +74,8 @@ var GridItem = (function (_Component) {
     };
 
     this.onResizeHandler = function (handlerName) {
+      console.log('resize handler', _this);
+
       return function (e, _ref2) {
         var element = _ref2.element;
         var size = _ref2.size;
