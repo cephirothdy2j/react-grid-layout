@@ -17,4 +17,5 @@ var styles = {
     userSelect: 'none'
   }
 };
-exports.styles = styles;
+exports['default'] = styles;
+module.exports = exports['default'];
