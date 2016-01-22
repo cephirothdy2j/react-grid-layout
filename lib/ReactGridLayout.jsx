@@ -5,6 +5,8 @@ import {bottom, clone, compact, getLayoutItem, moveElement,
 import GridItem from './GridItem';
 import ListensToWidth from './components/ListensToWidth';
 
+import styles from './styles';
+
 // Types
 import type {Layout, LayoutItem, ResizeEvent, DragEvent} from './utils';
 type State = {
@@ -16,21 +18,6 @@ type State = {
   oldResizeItem: ?LayoutItem
 };
 // End Types
-
-// styles of all elements
-const styles = {
-  placeholder: {
-    background: 'red',
-    opacity: 0.2,
-    transitionDuration: '100ms',
-    zIndex: 2,
-    webkitUserSelect: 'none',
-    mozUserSelect: 'none',
-    msUserSelect: 'none',
-    oUserSelect: 'none',
-    userSelect: 'none'   
-  }
-};
 
 /**
  * A reactive, fluid grid layout with draggable, resizable components.
