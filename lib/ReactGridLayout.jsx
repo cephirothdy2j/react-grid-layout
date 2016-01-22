@@ -17,6 +17,21 @@ type State = {
 };
 // End Types
 
+// styles of all elements
+const styles = {
+  placeholder: {
+    background: 'red',
+    opacity: 0.2,
+    transitionDuration: '100ms',
+    zIndex: 2,
+    webkitUserSelect: 'none',
+    mozUserSelect: 'none',
+    msUserSelect: 'none',
+    oUserSelect: 'none',
+    userSelect: 'none'   
+  }
+};
+
 /**
  * A reactive, fluid grid layout with draggable, resizable components.
  */
@@ -227,7 +242,7 @@ class ReactGridLayout extends React.Component {
 
     // Create placeholder (display only)
     var placeholder = {
-      w: l.w, h: l.h, x: l.x, y: l.y, placeholder: true, i: i
+      w: l.w, h: l.h, x: l.x, y: l.y, placeholder: true, i: i, style: styles.placeholder
     };
 
     // Move the element to the dragged location.
@@ -293,7 +308,7 @@ class ReactGridLayout extends React.Component {
 
     // Create placeholder element (display only)
     var placeholder = {
-      w: w, h: h, x: l.x, y: l.y, placeholder: true, i: i
+      w: w, h: h, x: l.x, y: l.y, placeholder: true, i: i, style: styles.placeholder
     };
 
     this.props.onResize(layout, oldL, l, placeholder, e, element);
