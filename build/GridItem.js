@@ -52,7 +52,7 @@ var GridItem = (function (_Component) {
     };
 
     this.onDragHandler = function (handlerName) {
-      console.log('drag handler', _this);
+      //console.log('drag handler', this);
       return function (e, _ref) {
         var element = _ref.element;
         var position = _ref.position;
@@ -74,7 +74,7 @@ var GridItem = (function (_Component) {
     };
 
     this.onResizeHandler = function (handlerName) {
-      console.log('resize handler', _this);
+      //console.log('resize handler', this);
 
       return function (e, _ref2) {
         var element = _ref2.element;
@@ -189,6 +189,7 @@ var GridItem = (function (_Component) {
   }, {
     key: 'createStyle',
     value: function createStyle(pos) {
+      console.log('create style', this);
       var style = {
         width: pos.width + 'px',
         height: pos.height + 'px',

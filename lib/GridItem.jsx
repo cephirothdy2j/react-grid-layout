@@ -159,6 +159,7 @@ export default class GridItem extends Component {
    * @return {Object}     Style object.
    */
   createStyle(pos: Position): Object {
+    console.log('create style',this);
     var style = {
       width: pos.width + 'px',
       height: pos.height + 'px',
@@ -247,7 +248,7 @@ export default class GridItem extends Component {
    * @return {Function}           Handler function.
    */
   onDragHandler: Function = (handlerName: string) => {
-    console.log('drag handler', this);
+    //console.log('drag handler', this);
     return (e: Event, {element, position}: {element: Node, position: Position}) => {
       if (!this.props[handlerName]) return;
       // Get new XY
@@ -269,7 +270,7 @@ export default class GridItem extends Component {
    * @return {Function}           Handler function.
    */
   onResizeHandler: Function = (handlerName: string) => {
-    console.log('resize handler', this);
+    //console.log('resize handler', this);
 
     return (e: Event, {element, size}: {element: Node, size: Position}) => {
       if (!this.props[handlerName]) return;
