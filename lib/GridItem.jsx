@@ -7,6 +7,8 @@ import assign from 'object-assign';
 
 import type {Position, Size} from './utils';
 
+import styles from './styles';
+
 /**
  * An individual item within a ReactGridLayout.
  */
@@ -159,7 +161,6 @@ export default class GridItem extends Component {
    * @return {Object}     Style object.
    */
   createStyle(pos: Position): Object {
-    console.log('create style',this);
     var style = {
       width: pos.width + 'px',
       height: pos.height + 'px',
@@ -300,6 +301,13 @@ export default class GridItem extends Component {
       pos.height = this.state.resizing.height;
     }
 
+    var resizingStyle = {};
+    if(this.state.resizing) {
+      resizingStyle = styles.reactGridItemResizing;
+    } else {
+      resizingStyle = styles.reactGridItem;
+    }
+
     // Create the child element. We clone the existing element but modify its className and style.
     var child = React.cloneElement(this.props.children, {
       // Munge a classname. Use passed in classnames and resizing.
@@ -312,7 +320,7 @@ export default class GridItem extends Component {
         this.props.useCSSTransforms ? 'cssTransforms' : '',
       ].join(' '),
       // We can set the width and height on the child, but unfortunately we can't set the position.
-      style: assign({}, this.props.style, this.createStyle(pos))
+      style: assign(resizingStyle, this.props.style, this.createStyle(pos))
     });
 
     // Resizable support. This is usually on but the user can toggle it off.

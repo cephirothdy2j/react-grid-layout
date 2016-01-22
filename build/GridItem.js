@@ -1,8 +1,3 @@
-
-
-/**
- * An individual item within a ReactGridLayout.
- */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -34,6 +29,14 @@ var _reactResizable = require('react-resizable');
 var _objectAssign = require('object-assign');
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
+var _styles = require('./styles');
+
+var _styles2 = _interopRequireDefault(_styles);
+
+/**
+ * An individual item within a ReactGridLayout.
+ */
 
 var GridItem = (function (_Component) {
   _inherits(GridItem, _Component);
@@ -189,7 +192,6 @@ var GridItem = (function (_Component) {
   }, {
     key: 'createStyle',
     value: function createStyle(pos) {
-      console.log('create style', this);
       var style = {
         width: pos.width + 'px',
         height: pos.height + 'px',
@@ -295,13 +297,20 @@ var GridItem = (function (_Component) {
         pos.height = this.state.resizing.height;
       }
 
+      var resizingStyle = {};
+      if (this.state.resizing) {
+        resizingStyle = _styles2['default'].reactGridItemResizing;
+      } else {
+        resizingStyle = _styles2['default'].reactGridItem;
+      }
+
       // Create the child element. We clone the existing element but modify its className and style.
       var child = _react2['default'].cloneElement(this.props.children, {
         // Munge a classname. Use passed in classnames and resizing.
         // React with merge the classNames.
         className: ['react-grid-item', this.props.className, this.props.isDraggable ? '' : 'static', this.state.resizing ? 'resizing' : '', this.props.useCSSTransforms ? 'cssTransforms' : ''].join(' '),
         // We can set the width and height on the child, but unfortunately we can't set the position.
-        style: (0, _objectAssign2['default'])({}, this.props.style, this.createStyle(pos))
+        style: (0, _objectAssign2['default'])(resizingStyle, this.props.style, this.createStyle(pos))
       });
 
       // Resizable support. This is usually on but the user can toggle it off.
