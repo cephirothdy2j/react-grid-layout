@@ -32,24 +32,13 @@ var _componentsListensToWidth = require('./components/ListensToWidth');
 
 var _componentsListensToWidth2 = _interopRequireDefault(_componentsListensToWidth);
 
+var _styles = require('./styles');
+
+var _styles2 = _interopRequireDefault(_styles);
+
 // Types
 
 // End Types
-
-// styles of all elements
-var styles = {
-  placeholder: {
-    background: 'red',
-    opacity: 0.2,
-    transitionDuration: '100ms',
-    zIndex: 2,
-    webkitUserSelect: 'none',
-    mozUserSelect: 'none',
-    msUserSelect: 'none',
-    oUserSelect: 'none',
-    userSelect: 'none'
-  }
-};
 
 /**
  * A reactive, fluid grid layout with draggable, resizable components.
@@ -102,7 +91,7 @@ var ReactGridLayout = (function (_React$Component) {
 
       // Create placeholder (display only)
       var placeholder = {
-        w: l.w, h: l.h, x: l.x, y: l.y, placeholder: true, i: i, style: styles.placeholder
+        w: l.w, h: l.h, x: l.x, y: l.y, placeholder: true, i: i, style: _styles2['default'].placeholder
       };
 
       // Move the element to the dragged location.
@@ -166,7 +155,7 @@ var ReactGridLayout = (function (_React$Component) {
 
       // Create placeholder element (display only)
       var placeholder = {
-        w: w, h: h, x: l.x, y: l.y, placeholder: true, i: i, style: styles.placeholder
+        w: w, h: h, x: l.x, y: l.y, placeholder: true, i: i, style: _styles2['default'].placeholder
       };
 
       _this.props.onResize(layout, oldL, l, placeholder, e, element);
@@ -277,7 +266,7 @@ var ReactGridLayout = (function (_React$Component) {
           isDraggable: false,
           isResizable: false,
           useCSSTransforms: this.props.useCSSTransforms,
-          style: styles.placeholder
+          style: _styles2['default'].placeholder
         },
         _react2['default'].createElement('div', null)
       );
