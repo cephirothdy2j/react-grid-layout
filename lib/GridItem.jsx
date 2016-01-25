@@ -190,7 +190,7 @@ export default class GridItem extends Component {
    * @return {Element}          Child wrapped in Draggable.
    */
   mixinDraggable(child: ReactElement, position: Position): ReactElement {
-    var start = typeof position.left === "string" ? undefined : {x: 0, y: 0};
+    var start = typeof position.left === "string" ? undefined : {x: position.left, y: position.top};
     return (
       <Draggable
         start={start}
