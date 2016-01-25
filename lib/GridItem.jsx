@@ -202,7 +202,7 @@ export default class GridItem extends Component {
         cancel={".react-resizable-handle " + this.props.cancel}
         useCSSTransforms={this.props.useCSSTransforms}
         >
-        <span>{child}</span>
+        {child}
       </Draggable>
     );
   }

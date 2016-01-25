@@ -269,7 +269,7 @@ var ReactGridLayout = (function (_React$Component) {
 
     /**
      * Given a grid item, set its style attributes & surround in a <Draggable>.
-     * @param  {Element} child React element.
+     * @param  {Element} child React element. 
      * @param  {string}  i     Index of element.
      * @return {Element}       Element wrapped in draggable and properly placed.
      */
