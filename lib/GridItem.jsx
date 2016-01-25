@@ -189,7 +189,7 @@ export default class GridItem extends Component {
    * @param  {Object} position  Position object (pixel values)
    * @return {Element}          Child wrapped in Draggable.
    */
-  mixinDraggable(child, position) {
+  mixinDraggable(child: ReactElement, position: Position): ReactElement {
     var start = typeof position.left === "string" ? undefined : {x: position.left, y: position.top};
     return (
       <Draggable
@@ -202,7 +202,7 @@ export default class GridItem extends Component {
         cancel={".react-resizable-handle " + this.props.cancel}
         useCSSTransforms={this.props.useCSSTransforms}
         >
-        {child}
+        <span>{child}</span>
       </Draggable>
     );
   }
