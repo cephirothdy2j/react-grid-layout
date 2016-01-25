@@ -232,7 +232,11 @@ var GridItem = (function (_Component) {
           cancel: ".react-resizable-handle " + this.props.cancel,
           useCSSTransforms: this.props.useCSSTransforms
         },
-        child
+        _react2['default'].createElement(
+          'span',
+          null,
+          child
+        )
       );
     }
 
