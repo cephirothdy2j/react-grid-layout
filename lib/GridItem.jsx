@@ -189,7 +189,7 @@ export default class GridItem extends Component {
    * @param  {Object} position  Position object (pixel values)
    * @return {Element}          Child wrapped in Draggable.
    */
-  mixinDraggable(child: ReactElement, position: Position): ReactElement {
+  mixinDraggable(child, position) {
     var start = typeof position.left === "string" ? undefined : {x: position.left, y: position.top};
     return (
       <Draggable
