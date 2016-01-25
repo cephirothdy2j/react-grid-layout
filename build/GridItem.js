@@ -219,7 +219,7 @@ var GridItem = (function (_Component) {
   }, {
     key: 'mixinDraggable',
     value: function mixinDraggable(child, position) {
-      var start = typeof position.left === "string" ? undefined : { x: position.left, y: position.top };
+      var start = typeof position.left === "string" ? undefined : { x: 0, y: 0 };
       return _react2['default'].createElement(
         _reactDraggable2['default'],
         {
